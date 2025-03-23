@@ -2,25 +2,39 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "tsx watch --clear-screen=false --env-file=.env src/index.ts",
+    "dev": "tsx watch --clear-screen=false --env-file=.env src/server.ts",
     "build": "tsc",
-    "start": "node --env-file=.env dist/index.js"
+    "start": "node --env-file=.env dist/server.js",
+    "lint": "eslint . --ext .ts --ext .tsx",
+    "format": "prettier --write . --ignore-path .gitignore --config .prettierrc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chess.js": "^1.1.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "socket.io": "^4.8.1"
+    "ws": "^8.18.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.23.0",
     "@types/cors": "~2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.13.11",
+    "@types/ws": "~8.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "@typescript-eslint/parser": "^8.27.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.3",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.9"
   }
 }
